@@ -1,4 +1,4 @@
-import app as st
+import streamlit as st
 from PIL import Image
 import numpy as np
 import satellighte as sat

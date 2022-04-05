@@ -17,11 +17,9 @@ def main():
 
     if image_file:
         image = Image.open(image_file)
+        option = st.selectbox("Select model", sat.available_models())
+        st.write("Selected Model:", option)
         if st.button("Process"):
-
-            option = st.selectbox("Select model", sat.available_models())
-            st.write("Selected Model:", option)
-
             image = np.array(image.convert("RGB"))
             FRAME_WINDOW = st.image([])
             model = sat.Classifier.from_pretrained(option)

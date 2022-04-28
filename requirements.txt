@@ -1,2 +1,2 @@
 satellighte
-streamlit
+streamlit~=1.8.1

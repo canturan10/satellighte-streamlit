@@ -1,35 +1,61 @@
+import numpy as np
+import requests
+import satellighte as sat
 import streamlit as st
 from PIL import Image
-import numpy as np
-import satellighte as sat
 
 
 def main():
     # pylint: disable=no-member
 
-    st.title("Satellighte Demo")
-    st.write("Satellite Image Classification")
-
-    image_file = st.file_uploader(
-        "Upload image",
-        type=["jpeg", "png", "jpg", "webp"],
+    st.title("Satellighte Image Classification Demo")
+    st.write(
+        "**Satellighte** is an image classification library  that consist state-of-the-art deep learning methods. It is a combination of the words **'Satellite'** and **'Light'**, and its purpose is to establish a light structure to classify satellite images, but to obtain robust results."
     )
 
-    if image_file:
-        image = Image.open(image_file)
-        option = st.selectbox("Select model", sat.available_models())
-        st.write("Selected Model:", option)
-        if st.button("Process"):
-            image = np.array(image.convert("RGB"))
-            FRAME_WINDOW = st.image([])
-            model = sat.Classifier.from_pretrained(option)
-            model.eval()
+    uploaded_file = st.sidebar.file_uploader(
+        "", type=["png", "jpg", "jpeg"], accept_multiple_files=False
+    )
 
-            results = model.predict(image)
-            pil_img = sat.utils.visualize(image, results)
+    st.sidebar.write(
+        "[Find sample images on Satellighte.](https://github.com/canturan10/satellighte/tree/master/src/eurosat_samples/)"
+    )
 
-            st.write("Results:", results)
-            FRAME_WINDOW.image(pil_img)
+    selected_model = st.sidebar.selectbox(
+        "Select model",
+        sat.available_models(),
+    )
+    selected_version = st.sidebar.selectbox(
+        "Select version",
+        sat.get_model_versions(selected_model),
+    )
+
+    url = "https://raw.githubusercontent.com/canturan10/satellighte/master/src/satellighte.png?raw=true"
+    satellighte = Image.open(requests.get(url, stream=True).raw)
+    st.sidebar.caption(f"satellighte version `{sat.__version__}`")
+    st.sidebar.image(satellighte, use_column_width=True)
+
+    if uploaded_file is None:
+        # Default image.
+        url = "https://raw.githubusercontent.com/canturan10/satellighte/master/src/eurosat_samples/HerbaceousVegetation.jpg?raw=true"
+        image = Image.open(requests.get(url, stream=True).raw)
+
+    else:
+        # User-selected image.
+        image = Image.open(uploaded_file)
+
+    st.write("### Inferenced Image")
+    image = np.array(image.convert("RGB"))
+    FRAME_WINDOW = st.image([], use_column_width=True)
+
+    model = sat.Classifier.from_pretrained(selected_model, selected_version)
+    model.eval()
+
+    results = model.predict(image)
+    pil_img = sat.utils.visualize(image, results)
+
+    st.write("Results:", results)
+    FRAME_WINDOW.image(pil_img)
 
 
 if __name__ == "__main__":

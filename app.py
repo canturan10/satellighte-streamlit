@@ -13,11 +13,11 @@ def main():
         "**Satellighte** is an image classification library  that consist state-of-the-art deep learning methods. It is a combination of the words **'Satellite'** and **'Light'**, and its purpose is to establish a light structure to classify satellite images, but to obtain robust results."
     )
 
-    st.sidebar.title("Satellighte")
     url = "https://raw.githubusercontent.com/canturan10/satellighte/master/src/satellighte.png?raw=true"
     satellighte = Image.open(requests.get(url, stream=True).raw)
+    st.sidebar.image(satellighte, width=150)
+    st.sidebar.title("Satellighte")
     st.sidebar.caption(f"Version `{sat.__version__}`")
-    st.sidebar.image(satellighte, width=100)
 
     uploaded_file = st.sidebar.file_uploader(
         "", type=["png", "jpg", "jpeg"], accept_multiple_files=False

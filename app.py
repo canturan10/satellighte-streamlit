@@ -8,10 +8,19 @@ from PIL import Image
 def main():
     # pylint: disable=no-member
 
-    st.title("Satellighte Image Classification Demo")
+    st.title("Satellighte Demo Page")
     st.write(
         "**Satellighte** is an image classification library  that consist state-of-the-art deep learning methods. It is a combination of the words **'Satellite'** and **'Light'**, and its purpose is to establish a light structure to classify satellite images, but to obtain robust results."
     )
+
+    st.sidebar.title("Satellighte")
+    url = "https://raw.githubusercontent.com/canturan10/satellighte/master/src/satellighte.png?raw=true"
+    satellighte = Image.open(requests.get(url, stream=True).raw)
+    st.sidebar.caption(f"satellighte version `{sat.__version__}`")
+    st.sidebar.image(satellighte)
+    st.sidebar.write("[Project Page](https://canturan10.github.io/satellighte)")
+    st.sidebar.write("[Github Page](https://github.com/canturan10/satellighte)")
+    st.sidebar.write("[Documentation Page](https://satellighte.readthedocs.io/)")
 
     uploaded_file = st.sidebar.file_uploader(
         "", type=["png", "jpg", "jpeg"], accept_multiple_files=False
@@ -29,11 +38,6 @@ def main():
         "Select version",
         sat.get_model_versions(selected_model),
     )
-
-    url = "https://raw.githubusercontent.com/canturan10/satellighte/master/src/satellighte.png?raw=true"
-    satellighte = Image.open(requests.get(url, stream=True).raw)
-    st.sidebar.caption(f"satellighte version `{sat.__version__}`")
-    st.sidebar.image(satellighte, use_column_width=True)
 
     if uploaded_file is None:
         # Default image.

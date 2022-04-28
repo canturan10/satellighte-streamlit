@@ -16,11 +16,8 @@ def main():
     st.sidebar.title("Satellighte")
     url = "https://raw.githubusercontent.com/canturan10/satellighte/master/src/satellighte.png?raw=true"
     satellighte = Image.open(requests.get(url, stream=True).raw)
-    st.sidebar.caption(f"satellighte version `{sat.__version__}`")
-    st.sidebar.image(satellighte)
-    st.sidebar.write("[Project Page](https://canturan10.github.io/satellighte)")
-    st.sidebar.write("[Github Page](https://github.com/canturan10/satellighte)")
-    st.sidebar.write("[Documentation Page](https://satellighte.readthedocs.io/)")
+    st.sidebar.caption(f"Version `{sat.__version__}`")
+    st.sidebar.image(satellighte, width=100)
 
     uploaded_file = st.sidebar.file_uploader(
         "", type=["png", "jpg", "jpeg"], accept_multiple_files=False

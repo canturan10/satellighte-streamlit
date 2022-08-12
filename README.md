@@ -4,7 +4,7 @@
 
 <!-- PROJECT SUMMARY -->
 <p align="center">
-    <img width="300px" src="https://raw.githubusercontent.com/canturan10/satellighte-streamlit/master/src/satellighte-streamlit.png" align="center" alt="satellighte-streamlit" />
+    <img width="250px" src="https://raw.githubusercontent.com/canturan10/satellighte-streamlit/master/src/satellighte-streamlit.png" align="center" alt="satellighte-streamlit" />
 <h2 align="center">Satellighte-Streamlit</h2>
 <h4 align="center">Implementation of Streamlit Library for Satellighte</h4>
 
@@ -12,9 +12,16 @@
     <strong>
         <a href="https://share.streamlit.io/canturan10/satellighte-streamlit/app.py">Demo Page</a>
         •
+        <a href="https://huggingface.co/spaces/canturan10/satellighte">Hugging Face</a>
+    </strong>
+</p>
+<p align="center">
+    <strong>
         <a href="https://canturan10.github.io/satellighte/">Website</a>
         •
         <a href="https://satellighte.readthedocs.io/">Docs</a>
+        •
+        <a href="https://pypi.org/project/satellighte/">Pypi</a>
     </strong>
 </p>
 

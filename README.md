@@ -4,7 +4,7 @@
 
 <!-- PROJECT SUMMARY -->
 <p align="center">
-    <img width="100px" src="https://raw.githubusercontent.com/canturan10/satellighte-streamlit/master/src/satellighte-streamlit.png" align="center" alt="satellighte-streamlit" />
+    <img width="300px" src="https://raw.githubusercontent.com/canturan10/satellighte-streamlit/master/src/satellighte-streamlit.png" align="center" alt="satellighte-streamlit" />
 <h2 align="center">Satellighte-Streamlit</h2>
 <h4 align="center">Implementation of Streamlit Library for Satellighte</h4>
 

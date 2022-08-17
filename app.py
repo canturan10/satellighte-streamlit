@@ -31,7 +31,7 @@ def main():
     st.sidebar.title("Satellighte")
     st.sidebar.caption(sat.__description__)
 
-    st.write(
+    st.sidebar.write(
         "**Satellighte** is an image classification library  that consist state-of-the-art deep learning methods. It is a combination of the words **'Satellite'** and **'Light'**, and its purpose is to establish a light structure to classify satellite images, but to obtain robust results."
     )
 

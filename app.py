@@ -37,6 +37,16 @@ def main():
 
     st.sidebar.caption(f"Version: `{sat.__version__}`")
     st.sidebar.caption(f"License: `{sat.__license__}`")
+    st.sidebar.caption("")
+    st.sidebar.caption(f"[Website](https://canturan10.github.io/satellighte/)")
+    st.sidebar.caption(f"[Docs](https://satellighte.readthedocs.io/)")
+    st.sidebar.caption(f"[Github](https://github.com/canturan10/satellighte)")
+    # st.sidebar.caption(f"[Demo Page](https://canturan10-satellighte-streamlit-app-6lr5ve.streamlitapp.com/)")
+    st.sidebar.caption(
+        f"[Hugging Face](https://huggingface.co/spaces/canturan10/satellighte)"
+    )
+    st.sidebar.caption(f"[Pypi](https://pypi.org/project/satellighte/)")
+    st.sidebar.caption("")
     st.sidebar.caption(sat.__copyright__)
 
     selected_model = st.selectbox(

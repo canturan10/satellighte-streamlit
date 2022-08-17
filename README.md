@@ -5,7 +5,7 @@
 <!-- PROJECT SUMMARY -->
 <p align="center">
     <img width="250px" src="https://raw.githubusercontent.com/canturan10/satellighte-streamlit/master/src/satellighte-streamlit.png" align="center" alt="satellighte-streamlit" />
-<h2 align="center">Satellighte-Streamlit</h2>
+<h2 align="center">Satellighte | Streamlit</h2>
 <h4 align="center">Implementation of Streamlit Library for Satellighte</h4>
 
 <p align="center">
@@ -26,9 +26,9 @@
 </p>
 
 <!-- ABOUT THE PROJECT -->
-## About The Satellighte-Streamlit
+## About The Satellighte | Streamlit
 
-**Satellighte-Streamlit** is a web application that is developed with the Streamlit library. With satellighte-streamlit, you can easily classify satellite images with the models trained with satellighte.
+**Satellighte | Streamlit** is a web application that is developed with the Streamlit library. With "Satellighte | Streamlit", you can easily classify satellite images with the models trained with satellighte.
 
 <!-- LICENSE -->
 ## License
